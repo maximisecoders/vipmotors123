@@ -1,0 +1,140 @@
+.button {
+  --primary: #000;
+  --primary-foreground: #fff;
+  --destructive: #dc2626;
+  --destructive-foreground: #fff;
+  --background: #fff;
+  --foreground: #000;
+  --secondary: #f3f4f6;
+  --secondary-foreground: #000;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  height: 2.5rem;
+  padding: 0.5rem 1rem;
+  border: none !important; /* Force no border */
+}
+
+/* Variants with fixed colors */
+.button.default {
+  background-color: #000000;
+  color: #ffffff;
+}
+.button.default:hover {
+  background-color: #000000;
+  color: #ffffff;
+  transform: none;
+}
+
+.button.destructive {
+  background-color: #dc2626;
+  color: #ffffff;
+}
+.button.destructive:hover {
+  background-color: #dc2626;
+  color: #ffffff;
+  transform: none;
+}
+
+.button.outline {
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #e5e7eb;
+  border-color: #e5e7eb !important;
+  border: 1px solid #e5e7eb !important; /* Force gray border */
+}
+.button.outline:hover {
+  background-color: #ffffff;
+  color: #000000;
+  transform: none;
+  border-color: #d1d5db !important;
+}
+
+.button.secondary {
+  background-color: #f3f4f6;
+  color: #000000;
+}
+.button.secondary:hover {
+  background-color: #f3f4f6;
+  color: #000000;
+  transform: none;
+}
+
+.button.ghost {
+  background-color: transparent;
+  color: #000000;
+}
+.button.ghost:hover {
+  background-color: transparent;
+  color: #000000;
+  transform: none;
+}
+
+.button.link {
+  background-color: transparent;
+  color: #000000;
+  text-decoration: underline;
+}
+.button.link:hover {
+  background-color: transparent;
+  color: #000000;
+  transform: none;
+}
+
+/* Remove general hover effects */
+.button:hover {
+  transform: none;
+  box-shadow: inherit;
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Sizes */
+.button.sm {
+  height: 2.25rem;
+  padding: 0 0.75rem;
+}
+
+.button.lg {
+  height: 2.75rem;
+  padding: 0 2rem;
+}
+
+.button.icon {
+  height: 2.5rem;
+  width: 2.5rem;
+  padding: 0;
+}
+
+/* Custom styles for red button without hover effect */
+.button.price-button {
+  background-color: #dc2626 !important;
+  color: white !important;
+}
+
+.button.price-button:hover {
+  background-color: #dc2626 !important;
+  color: white !important;
+  transform: none !important;
+}
+
+/* Reset any border styles that might be coming from elsewhere */
+.button:focus, 
+.button:active,
+.button:focus-visible {
+  border: none !important;
+  outline: none !important;
+}
