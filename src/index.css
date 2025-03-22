@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #ffffff;
+    --foreground: #000000;
+    --primary: #0f172a;
+    --primary-foreground: #ffffff;
+    --secondary: #f1f5f9;
+    --secondary-foreground: #0f172a;
+    --destructive: #ef4444;
+    --destructive-foreground: #ffffff;
+    --accent: #f1f5f9;
+    --accent-foreground: #0f172a;
+    --input: #e2e8f0;
+  }
+
+  [data-theme="dark"] {
+    --background: #0f172a;
+    --foreground: #ffffff;
+    --primary: #ffffff;
+    --primary-foreground: #0f172a;
+    --secondary: #1e293b;
+    --secondary-foreground: #ffffff;
+    --destructive: #7f1d1d;
+    --destructive-foreground: #ffffff;
+    --accent: #1e293b;
+    --accent-foreground: #ffffff;
+    --input: #1e293b;
+  }
+}
+
+@layer base {
+  * {
+    border: 0;
+    outline: 0;
+    border-radius: 5px
+  }
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer base {
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+.glass-card {
+  @apply bg-white/80 backdrop-blur-lg border border-white/20 shadow-lg;
+}
+
+.settings-container {
+  @apply glass-card max-w-2xl mx-auto my-8;
+}
+
+.input-field {
+  @apply w-full p-2 mb-4 bg-input text-foreground;
+}
+
+.btn-primary {
+  @apply px-4 py-2 bg-primary text-primary-foreground hover:opacity-90;
+}
+
+.btn-destructive {
+  @apply px-4 py-2 bg-destructive text-destructive-foreground hover:opacity-90 disabled:opacity-50;
+}
+
+.settings-section {
+  @apply mb-8 p-4 bg-secondary rounded-lg;
+}
+
+
+/* Add to your global.css or tailwind.css */
+/* Add to your global.css if not already present */
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    &::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+  }
+  .scrollbar-thumb-white\/20::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 9999px;
+  }
+  .scrollbar-track-transparent::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+}
