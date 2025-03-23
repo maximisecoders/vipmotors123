@@ -3,7 +3,7 @@ import { ToastProvider } from "@radix-ui/react-toast";
 import { Toaster as Sonner } from "sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
 import Index from "./pages/Index";
 import Inventory from "./pages/Inventory";
 import Compare from "./pages/Compare";
@@ -23,7 +23,7 @@ const App = () => (
       <ToastProvider>
         <Toast />
         <Sonner />
-        <BrowserRouter basename={import.meta.env.BASE_URL}>
+        <HashRouter basename={import.meta.env.BASE_URL}>
           <Routes>
             <Route path="/login" element={<Login />} />
             <Route path="/" element={<Index />} />
@@ -40,7 +40,7 @@ const App = () => (
             />
             <Route path="*" element={<NotFound />} />
           </Routes>
-        </BrowserRouter>
+        </HashRouter>
       </ToastProvider>
     </TooltipProvider>
   </QueryClientProvider>
